@@ -19,6 +19,7 @@ resource "aws_instance" "ec2" {
   tags = {
     Name = "HelloWorldterraformcloud"
     Team= "devops"
+    environment = "${var.environment}"
   }
 }
 
