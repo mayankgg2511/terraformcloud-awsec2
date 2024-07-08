@@ -13,12 +13,13 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2" {
-  ami           = "ami-01376101673c89611"
-  instance_type = "t2.micro"
+  ami           = "${var.ami_id}"
+  instance_type = "${var.instance_type}"
 
   tags = {
     Name = "HelloWorldterraformcloud"
     Team= "devops"
+    environment = "${var.environment}"
   
   }
 }
